@@ -24,13 +24,25 @@ body {
   margin: auto;
 }
 
+.btnBasla {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  width: 200px;
+  height: 70px;
+  background-color: #FEF2BF;
+  font-family: 'Press Start 2P', cursive;
+  border-radius: 12%;
+  border: 7px solid black;
+
+}
+
 .btn {
   margin: 25px;
   display: inline-block;
   height: 200px;
   width: 200px;
   border: 10px solid black;
-  border-radius: 20%;
+  border-radius: 12%;
 }
 
 .game-over {

@@ -6,23 +6,27 @@ btnBasmaOyuncu(".green");
 btnBasmaOyuncu(".yellow");
 btnBasmaOyuncu(".blue");
 
-var oyunaBaslandiMi= false;
+
 var rekorSayisi = 0;
 var ilerlemeSayisi;
 var pcDegerleri = [];
 var oyuncuDegerleri = [];
 var oyuncununDegeri;
 
-$(document).on("keypress", function() {
-  if(oyunaBaslandiMi === false) {
+$(".btnBasla").on("click", function() {
+
   ilerlemeSayisi = 0;
   pcDegerleri.length = 0;
   oyuncuDegerleri.length = 0;
 
   oyunuBaslat();
-  oyunaBaslandiMi = true;
 
-}
+  $(".btnBasla").addClass("pressed");
+
+  setTimeout(function() {
+    $(".btnBasla").removeClass("pressed");
+  }, 100);
+
 });
 
 
@@ -172,8 +176,8 @@ function esitlikKontrolu() {
 
 function oyunBitimiUyarısı() {
   console.log(JSON.stringify(oyuncuDegerleri) === JSON.stringify(pcDegerleri));
-  oyunaBaslandiMi = false;
-  $("h1").text("Oyun Bitti. Başlamak İçin Herhangi Bir Tuşa Basınız.");
+
+  $("h1").text("Oyun Bitti. Başlamak İçin Butona Basınız.");
   $("body").addClass("game-over");
   sesCal(".wrong");
   setTimeout(function(){
